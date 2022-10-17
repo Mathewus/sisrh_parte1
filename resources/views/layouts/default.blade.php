@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="/css/bootstrap.min.css">
 </head>
 
-<body>
+<body class="bg-light">
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
         <div class="container">
             <a href="/"><img src="/images/layout/logo_white.png" height="30" alt="Sis.RH"></a>
@@ -31,7 +31,7 @@
                         <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
                     </li>
                     <li class="nav-item px-3">
-                        <a class="nav-link" href="#">Departamentos</a>
+                        <a class="nav-link" href="{{ route('departamentos.index') }}">Departamentos</a>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="#">Usuários</a>
@@ -41,11 +41,11 @@
         </div>
     </nav>
 
-    <div class="container mb-5">
+    <div class="container mb-4">
         @yield('conteudo')
     </div>
 
-    <footer class="container-fluid bg-light text-center">
+    <footer class="container-fluid bg-light text-center mb-3">
         <span>
             Sistema desenvolvido na aula de Programação Avançada do curso de Sistema de Informação<br>
             Período letivo: 2022.2<br>

@@ -3,5 +3,90 @@
 @section('title', 'Cadastrar Funcionário')
 
 @section('conteudo')
-    <h1>Cadastrar Funcionário</h1>
+
+    <div class="container shadow bg-white pb-1 px-4" style="width:1150px; margin-top:-35px;">
+
+        <h1 class="pt-3 mb-4">Cadastrar Funcionário</h1>
+
+        <div class="row pt-3">
+
+            <div class="mb-3 col-sm-4">
+                <label for="nome" class="form-label">Nome</label>
+                <input type="text" name="nome" class="form-control form-control-lg bg-light" value="" required>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="data_nasc" class="form-label">Data de Nascimento</label>
+                <input type="date" name="data_nasc" class="form-control form-control-lg bg-light" value=""
+                    required>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="sexo" class="form-label">Sexo</label>
+                <select name="sexo" class="form-select form-select-lg bg-light" value="" required>
+                    <option value="Nenhuma"></option>
+                    <option value="M">Masculino</option>
+                    <option value="F">Feminino</option>
+                </select>
+            </div>
+
+
+            <div class="mb-3 col-sm-4">
+                <label for="cpf" class="form-label">CPF</label>
+                <input type="text" name="cpf" class="form-control form-control-lg bg-light" value="" required>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="email" class="form-label">E-mail</label>
+                <input type="email" name="email" class="form-control form-control-lg bg-light" value="" required>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="telefone" class="form-label">Telefone</label>
+                <input type="tel" name="telefone" placeholder="(DDD) XXXXX-XXXX" pattern="[0-9]{3}-[0-9]{5}-[0-9]{4}"
+                    class="form-control form-control-lg bg-light" value="" required>
+            </div>
+
+
+            <div class="mb-3 col-sm-4">
+                <label for="dep_t" class="form-label">Departamento</label>
+                <select name="dep_t" class="form-select form-select-lg bg-light" value="" required>
+                    <option value="Nenhuma"></option>
+                    <option value="dt">Departamento de Tecnologia</option>
+                    <option value="df">Departamento Financeiro</option>
+                    <option value="dc">Departamento Comercial</option>
+                    <option value="z">Zeladoria</option>
+                    <option value="rh">Recursos Humanos</option>
+                </select>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="cargo" class="form-label">Cargo</label>
+                <select name="cargo" class="form-select form-select-lg bg-light" value="" required>
+                    <option value="Nenhuma"></option>
+                    <option value="gt">Gerente de Tecnologia</option>
+                    <option value="gf">Gerente Financeiro</option>
+                    <option value="gc">Gerente Comercial</option>
+                    <option value="s">Supervisor</option>
+                    <option value="al">Auxiliar de Limpeza</option>
+                    <option value="aa">Auxiliar Administrativo</option>
+                    <option value="ti">Técnico de Informática</option>
+                    <option value="ac">Assistente comercial</option>
+                </select>
+            </div>
+            <div class="mb-3 col-sm-4">
+                <label for="salario" class="form-label">Salário</label>
+                <input type="number" name="salario" placeholder="R$" min="0" max="2200"
+                    class="form-control form-control-lg bg-light" value="" required>
+            </div>
+            <div class="mb-3">
+                <label for="foto" class="form-label">Foto</label>
+                <input type="file" name="arquivo" class="form-control form-control-lg bg-light" value="" required>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-sm-1" style="margin-right: 3px;">
+                <button type="submit" class="btn btn-primary" name="cadastrar">Cadastrar</button>
+            </div>
+            <div class="col-sm-1">
+                <button type="submit" class="btn btn-danger" name="cancelar">Cancelar</button>
+            </div>
+        </div>
+    </div>
 @endsection
