@@ -21,9 +21,9 @@
             <tbody>
                 @foreach ($departamentos as $departamento)
                     <tr>
-                        <td class="pt-3">{{ $departamento->id }}</td>
-                        <td class="pt-3">{{ $departamento->nome }}</td>
-                        <td><i class="bi bi-person btn btn-success"></i>
+                        <td class="align-middle">{{ $departamento->id }}</td>
+                        <td class="align-middle">{{ $departamento->nome }}</td>
+                        <td class="align-middle"><i class="bi bi-person btn btn-success"></i>
                             <i class="bi bi-pen btn btn-primary"></i>
                             <i class="bi bi-trash btn btn-danger"></i>
                         </td>

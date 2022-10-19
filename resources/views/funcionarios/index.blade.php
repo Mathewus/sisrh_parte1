@@ -24,13 +24,13 @@
             <tbody>
                 @foreach ($funcionarios as $funcionario)
                     <tr>
-                        <td class="pt-5">{{ $funcionario->id }}</td>
+                        <td class="align-middle">{{ $funcionario->id }}</td>
                         <td><img src="/images/funcionarios/{{ $funcionario->foto }}" alt="{{ $funcionario->nome }}"
                                 width="100"></td>
-                        <td class="pt-5">{{ $funcionario->nome }}</td>
-                        <td class="pt-5">{{ $funcionario->cargo->descricao }}</td>
-                        <td class="pt-5">{{ $funcionario->departamento->nome }}</td>
-                        <td class="pt-5"><i class="bi bi-pen btn btn-primary"></i>
+                        <td class="align-middle">{{ $funcionario->nome }}</td>
+                        <td class="align-middle">{{ $funcionario->cargo->descricao }}</td>
+                        <td class="align-middle">{{ $funcionario->departamento->nome }}</td>
+                        <td class="align-middle"><i class="bi bi-pen btn btn-primary"></i>
                             <i class="bi bi-trash btn btn-danger"></i>
                         </td>
                     </tr>

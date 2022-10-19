@@ -47,8 +47,8 @@
 
     <footer class="container-fluid bg-light text-center mb-3">
         <span>
-            Sistema desenvolvido na aula de Programação Avançada do curso de Sistema de Informação<br>
-            Período letivo: 2022.2<br>
+            Sistema desenvolvido na disciplina de Programação Avançada do curso de Sistema de Informação<br>
+            Semestre letivo: 2022.2<br>
             Centro Universitário UniRios
         </span>
     </footer>
