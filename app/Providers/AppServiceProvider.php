@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Departamento;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +24,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $departamentos = Departamento::select('id', 'nome')->orderBy('nome', 'asc')->get();
+        view()->share('departamentos', $departamentos);
     }
 }

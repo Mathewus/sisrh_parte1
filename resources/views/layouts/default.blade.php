@@ -24,8 +24,16 @@
                     <li class="nav-item px-3">
                         <a class="nav-link" href="/">Home</a>
                     </li>
-                    <li class="nav-item px-3">
-                        <a class="nav-link" href="{{ route('funcionarios.index') }}">Funcionários</a>
+                    <li class="nav-item px-3 dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Funcionários</a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="{{route('funcionarios.create')}}">Cadastrar novo</a></li>
+                            <li><a class="dropdown-item" href="{{route('funcionarios.index')}}">Listar todos</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            @foreach ($departamentos as $departamento)
+                            <li><a class="dropdown-item" href="">{{$departamento->nome}}</a></li>
+                            @endforeach
+                        </ul>
                     </li>
                     <li class="nav-item px-3">
                         <a class="nav-link" href="{{ route('cargos.index') }}">Cargos</a>
@@ -41,7 +49,7 @@
         </div>
     </nav>
 
-    <div class="container mb-4">
+    <div class="container mb-3 p-4">
         @yield('conteudo')
     </div>
 

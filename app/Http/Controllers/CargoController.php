@@ -10,7 +10,8 @@ class CargoController extends Controller
     public function index()
     {
         $cargos = Cargo::all();
-        return view('cargos.index', compact('cargos'));
+        $totalCargos = Cargo::all()->count();
+        return view('cargos.index', compact('cargos', 'totalCargos'));
     }
 
     public function create()
