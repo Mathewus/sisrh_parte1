@@ -15,7 +15,7 @@
                 <form action="" method="get" class="mb-3 d-flex justify-content-end">
 
                     <div class="input-group me-3">
-                        <input type="text" name="buscaFuncionario" class="form-control form-control-lg" 
+                        <input type="text" name="buscaCargo" class="form-control form-control-lg" 
                         placeholder="Nome do cargo">
                         <button class="btn btn-primary btn-lg" type="submit">Procurar</button>
                     </div>
