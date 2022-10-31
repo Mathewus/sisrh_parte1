@@ -7,6 +7,7 @@
     <div class="container shadow bg-white pb-1 px-4" style="width:1150px; margin-top:-35px;">
 
         <h1 class="pt-3 mb-4">Cadastrar Cargo</h1>
+        <form method="POST">
 
             <div class=" pt-3 mb-4">
                 <label for="descricao" class="form-label">Descrição</label>
@@ -22,5 +23,7 @@
                 <button type="submit" class="btn btn-danger" name="cancelar">Cancelar</button>
             </div>
         </div>
+
+    </form>
     </div>
 @endsection

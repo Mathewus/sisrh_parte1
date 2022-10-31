@@ -8,8 +8,11 @@
 
         <h1 class="pt-3 mb-4">Cadastrar Funcionário</h1>
 
-        <div class="row pt-3">
+        <form method="POST" action="{{route('funcioarios.store')}}" enctype="multipart/form-data">
 
+            @csrf
+            <input type="hidden" value="1" name="id_user">
+        <div class="row pt-3">
             <div class="mb-3 col-sm-4">
                 <label for="nome" class="form-label">Nome</label>
                 <input type="text" name="nome" class="form-control form-control-lg bg-light" value="" required>
@@ -45,28 +48,21 @@
 
 
             <div class="mb-3 col-sm-4">
-                <label for="dep_t" class="form-label">Departamento</label>
-                <select name="dep_t" class="form-select form-select-lg bg-light" value="" required>
-                    <option value="Nenhuma"></option>
-                    <option value="dt">Departamento de Tecnologia</option>
-                    <option value="df">Departamento Financeiro</option>
-                    <option value="dc">Departamento Comercial</option>
-                    <option value="z">Zeladoria</option>
-                    <option value="rh">Recursos Humanos</option>
+                <label for="id_departamento" class="form-label">Departamento</label>
+                <select name="id_departamento" class="form-select form-select-lg bg-light" value="" required>
+                    <option value=""></option>
+                    @foreach ($departamentos as $departamento )
+                    <option value="{{$departamento->id}}">{{ $departamento->nome }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-3 col-sm-4">
-                <label for="cargo" class="form-label">Cargo</label>
-                <select name="cargo" class="form-select form-select-lg bg-light" value="" required>
-                    <option value="Nenhuma"></option>
-                    <option value="gt">Gerente de Tecnologia</option>
-                    <option value="gf">Gerente Financeiro</option>
-                    <option value="gc">Gerente Comercial</option>
-                    <option value="s">Supervisor</option>
-                    <option value="al">Auxiliar de Limpeza</option>
-                    <option value="aa">Auxiliar Administrativo</option>
-                    <option value="ti">Técnico de Informática</option>
-                    <option value="ac">Assistente comercial</option>
+                <label for="id_cargo" class="form-label">Cargo</label>
+                <select name="id_cargo" class="form-select form-select-lg bg-light" value="" required>
+                    <option value=""></option>
+                    @foreach ($cargos as $cargo )
+                    <option value="{{$cargo->id}}">{{ $cargo->descricao }}</option>
+                    @endforeach
                 </select>
             </div>
             <div class="mb-3 col-sm-4">
@@ -76,7 +72,7 @@
             </div>
             <div class="mb-3">
                 <label for="foto" class="form-label">Foto</label>
-                <input type="file" name="arquivo" class="form-control form-control-lg bg-light" value="" required>
+                <input type="file" name="foto" class="form-control form-control-lg bg-light" value="" required>
             </div>
         </div>
 
@@ -85,8 +81,11 @@
                 <button type="submit" class="btn btn-primary" name="cadastrar">Cadastrar</button>
             </div>
             <div class="col-sm-1">
-                <button type="submit" class="btn btn-danger" name="cancelar">Cancelar</button>
+
+                <a href="{{route('funcionarios.index')}}"  class="btn btn-danger" >Cancelar</a>
             </div>
         </div>
+        
+    </form>
     </div>
 @endsection

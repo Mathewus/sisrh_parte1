@@ -8,6 +8,7 @@
 
     <h1 class="pt-3 mb-4">Cadastrar Departamento</h1>
 
+    <form method="POST">
         <div class=" pt-3 mb-4">
             <label for="nome" class="form-label">Nome</label>
             <input type="text" name="nome" class="form-control form-control-lg bg-light" 
@@ -22,5 +23,7 @@
             <button type="submit" class="btn btn-danger" name="cancelar">Cancelar</button>
         </div>
     </div>
+
+</form>
 </div>
 @endsection
