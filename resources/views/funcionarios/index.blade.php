@@ -7,6 +7,13 @@
     <div class="container shadow-sm position-relative bg-white pb-3 px-4" style="width:1150px; margin-top:-35px;">
 
         <h1 class="pt-4 mb-4">Funcionários</h1>
+
+        @if (Session::get('sucesso'))
+
+            <div class="alert alert-success text-center">{{ Session::get('sucesso') }}</div>
+            
+        @endif
+
         <a href="{{ route('funcionarios.create') }}"
             class="btn btn-primary position-absolute top-0 end-0 m-4 rounded-circle fs-4"><i
                 class="bi bi-person-plus-fill"></i></a>
@@ -39,19 +46,36 @@
                     @foreach ($funcionarios as $funcionario)
                         <tr>
                             <td class="align-middle">{{ $funcionario->id }}</td>
-                            <td><img src="/images/funcionarios/{{ $funcionario->foto }}" alt="{{ $funcionario->nome }}"
-                                    width="100"></td>
+                            <td><img src="/storage/funcionarios/{{ $funcionario->foto }}" alt="{{ $funcionario->nome }}"
+                                    width="100" height="120"></td>
                             <td class="align-middle">{{ $funcionario->nome }}</td>
                             <td class="align-middle">{{ $funcionario->cargo->descricao }}</td>
                             <td class="align-middle">{{ $funcionario->departamento->nome }}</td>
-                            <td class="align-middle"><i class="bi bi-pen btn btn-primary"></i>
-                                <i class="bi bi-trash btn btn-danger"></i>
+                            <td class="align-middle">
+                                <a href="{{route('funcionarios.edit', $funcionario->id) }}" class="btn btn-primary" title="Editar">
+                                    <i class="bi bi-pen"></i></a>
+                                <a href="{{route('funcionarios.destroy', $funcionario->id) }}" class="btn btn-danger" title="Excluir" 
+                                    data-bs-toggle="modal" data-bs-target="#modal-deletar-{{$funcionario->id}}">
+                                    <i class="bi bi-trash"></i></a>
+
+                                @include('funcionarios.delete')
                             </td>
                         </tr>
                     @endforeach
                 </tbody>
 
             </table>
+
+            <div>
+                <style>
+                    .pagination{
+                        justify-content: center;
+                    }
+                </style>
+                {{$funcionarios->links() }}
+
+            </div>
+
         </div>
     </div>
 @endsection

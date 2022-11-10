@@ -28,6 +28,12 @@ Route::get('/funcionarios/create', [FuncionarioController::class, 'create'])->na
 
 Route::post('/funcionarios', [FuncionarioController::class, 'store'])->name('funcionarios.store');
 
+Route::get('/funcionarios/edit/{id}', [FuncionarioController::class, 'edit'])->name('funcionarios.edit'); // Formulário de edição
+
+Route::put('/funcionarios/{id}', [FuncionarioController::class, 'update'])->name('funcionarios.update'); // Rota para atualização do registro no banco
+
+Route::delete('/funcionarios/{id}', [FuncionarioController::class, 'destroy'])->name('funcionarios.destroy'); // Rota para atualização do registro no banco
+
 Route::get('/cargos', [CargoController::class, 'index'])->name('cargos.index');
 
 Route::get('/cargos/create', [CargoController::class, 'create'])->name('cargos.create');
